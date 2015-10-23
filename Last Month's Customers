@@ -1,4 +1,4 @@
-Last Month's Customers
+--Last Month's Customers
 select DISTINCT
         CUST_NO
        ,CUSTOMER_SHIP_ID
