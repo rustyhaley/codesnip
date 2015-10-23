@@ -1,4 +1,4 @@
-Last Year Over This Year Through Last Month - Gross Sales
+--Last Year Over This Year Through Last Month - Gross Sales
 select * from IFSIntegration.dbo.PFX_REPORT_PIVOT_DUMP_BRAND_XXX
 where DATE_INVOICED between
           cast('1-1-' + cast(year(dateadd(yy, -1, getdate())) as varchar) as datetime) --First of This Year
