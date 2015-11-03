@@ -1,12 +1,12 @@
 
 --2 years back from today
-select dateadd(m, -24, getdate()) 
+select dateadd(m, -24, getdate())
 
 --Rolling 24 months
-select dateadd(m, -24, cast(cast(month(dateadd(m, -1, getdate())) as varchar) + '-1-' + cast(year(dateadd(m, -1, getdate())) as varchar) as datetime)) 
+select dateadd(m, -24, cast(cast(month(dateadd(m, -1, getdate())) as varchar) + '-1-' + cast(year(dateadd(m, -1, getdate())) as varchar) as datetime))
 
 --This month YYYYMM
-select Left(replace(convert(varchar(10), dateadd(m, -23, cast(cast(month(dateadd(m, -1, getdate())) as varchar) + '-1-' + cast(year(dateadd(m, -1, getdate())) as varchar) as datetime)), 102), '.', ''),6) 'This month YYYYMM'
+select Left(replace(convert(varchar(10), dateadd(m, -23, cast(cast(month(dateadd(m, -1, getdate())) as varchar) + '-1-' + cast(year(dateadd(m, -1, getdate())) as varchar) as datetime)), 102), '.', ''),6) 'This month YYYYMM two years ago'
 
 --First of this month yyyy-mm-dd
 select cast(convert(varchar(10), dateadd(m, -23, cast(cast(month(dateadd(m, -1, getdate())) as varchar) + '-1-' + cast(year(dateadd(m, -1, getdate())) as varchar) as datetime)), 120) as datetime) 'First of this month yyyy-mm-dd'
@@ -27,7 +27,7 @@ select CAST(DATEPART(year,getdate()) as varchar) + 'Q' + CAST(DATEPART(quarter,g
 select cast('1-1-' + cast(year(dateadd(yy, -1, getdate())) as varchar) as datetime) 'First of last year'
 
 --Formats
-select 
+select
  getdate() 'Default'--,convert(varchar(40),getdate(),   0) as '0'
 ,convert(varchar(40),getdate(), 100) as '0-100',convert(varchar(40),getdate(), 101) as '101',convert(varchar(40),getdate(), 103) as '103',convert(varchar(40),getdate(), 104) as '104'
 ,convert(varchar(40),getdate(), 100) as '105',convert(varchar(40),getdate(), 106) as '106',convert(varchar(40),getdate(), 107) as '107',convert(varchar(40),getdate(), 108) as '108'
